@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypta Signup</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="image/logo.png"
+          width="150"
+          height="40"
+          alt="Crypta Logo"
+          class="logo-img"
+        />
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+      </div>
+    </nav>
+
+    <div class="hero-section">
+      <div class="hero-section-content">
+        <h3>Explore Crypta with Confidence</h3>
+        <strong>Your Guide to Confident Crypta Investing</strong>
+        <button class="common-button">Welcome to Crypta</button>
+      </div>
+    </div>
+
+    <div class="signup-container">
+      <h1>Welcome to Crypta</h1>
+      <form id="signupForm">
+        <!-- Account Creation -->
+        <section>
+          <h2>Create Your Account</h2>
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Your full name, including first and last name"
+            required
+          />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="At least 8 characters"
+            minlength="8"
+            required
+          />
+          <span id="passwordStrength"></span>
+        </section>
+
+        <!-- Personal Information -->
+        <section>
+          <h2>Personal Information</h2>
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required />
+
+          <label for="address">Address</label>
+          <input type="text" id="address" required />
+
+          <label for="province">Province/Territory</label>
+          <select id="province" required>
+            <option value="" disabled selected>
+              Select Province/Territory
+            </option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MT">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="NV">Nunavut</option>
+            <option value="O">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QB">Quebec</option>
+            <option value="SC">Saskatchewan</option>
+            <option value="YK">Yukon</option>
+          </select>
+        </section>
+
+        <!-- Financial Information -->
+        <section>
+          <h2>Financial Information</h2>
+          <label for="income">Income Level</label>
+          <select id="income" required>
+            <option value="" disabled selected>Select Income Level</option>
+            <option value="below50k">Below $50,000</option>
+            <option value="50k-100k">$50,000 - $100,000</option>
+            <option value="100k-200k">$100,000 - $200,000</option>
+            <option value="200k-500k">$200,000 - $500,000</option>
+            <option value="500k-1000k">$500,000 - $1000,000</option>
+            <option value="over1000k">Over $1000,000</option>
+          </select>
+
+          <label for="experience">Investment Experience</label>
+          <select id="experience" required>
+            <option value="" disabled selected>Select Experience Level</option>
+            <option value="none">No Experience</option>
+            <option value="beginner">Beginner (0-1 years)</option>
+            <option value="intermediate">Intermediate (1-3 years)</option>
+            <option value="experienced">Experienced (3-5 years)</option>
+            <option value="advanced">Advanced (5-10 years)</option>
+            <option value="expert">Expert (10+ years)</option>
+          </select>
+        </section>
+        <!-- Risk Tolerance  -->
+        <h2>Risk Tolerance</h2>
+        <p class="risk-note">
+          How willing are you to potentially lose or diminish your investment,
+          balanced against the possible reward of high returns.
+        </p>
+        <div class="risk-tolerance">
+          <input
+            type="range"
+            id="riskSlider"
+            min="0"
+            max="100"
+            step="1"
+            value="0"
+            oninput="updateRisk()"
+          />
+          <span id="riskPercentage">0%</span>
+        </div>
+
+        <!-- Investment Goals -->
+        <section>
+          <h2>Investment Goals</h2>
+          <label
+            ><input type="checkbox" name="goals" value="retirement" /> Saving
+            for retirement</label
+          >
+          <label
+            ><input type="checkbox" name="goals" value="wealth" /> Building
+            wealth</label
+          >
+          <label
+            ><input type="checkbox" name="goals" value="milestones" /> Achieving
+            financial milestones</label
+          >
+        </section>
+
+        <!-- Bank Account Linking -->
+        <section>
+          <h2>Bank Account Information</h2>
+          <label for="bankAccount">Bank Account Number</label>
+          <input type="text" id="bankAccount" required />
+        </section>
+
+        <!-- Agreements and Final Review -->
+        <section>
+          <h2>Agreements</h2>
+          <label
+            ><input type="checkbox" id="agreement" required /> I agree to the
+            terms and conditions.</label
+          >
+        </section>
+
+        <button type="submit">Confirm and Create Account</button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img
+            src="image/crypta-logo.png"
+            width="200"
+            height="180"
+            alt="Crypta Logo"
+            class="footer-logo-img"
+          />
+          <p>Your gateway to confident cryptocurrency investing.</p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <div class="link-container">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Help</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: support@crypta.com</p>
+          <p>Phone: +1 (800) 123-4567</p>
+          <p>Address: 123 Crypta Avenue, Toronto, ON, Canada</p>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
